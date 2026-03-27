@@ -27,4 +27,6 @@ app.get("/get-video", async (req, res) => {
     }
 });
 
-app.listen(process.env.PORT || 3000, () => console.log("Running"));
+app.listen(process.env.PORT || 3000, "0.0.0.0", () => {
+    console.log("Server running");
+});
