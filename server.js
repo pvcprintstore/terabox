@@ -5,6 +5,10 @@ const cors = require("cors");
 const app = express();
 app.use(cors());
 
+app.get("/", (req, res) => {
+    res.send("Server is running ✅");
+});
+
 app.get("/get-video", async (req, res) => {
     try {
         let url = req.query.url;
@@ -27,6 +31,6 @@ app.get("/get-video", async (req, res) => {
     }
 });
 
-app.listen(process.env.PORT || 3000, "0.0.0.0", () => {
-    console.log("Server running");
+app.listen(process.env.PORT, "0.0.0.0", () => {
+    console.log("Server running on port " + process.env.PORT);
 });
